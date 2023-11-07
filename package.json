@@ -1,0 +1,24 @@
+{
+  "name": "merkle-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./test/*.js",
+    "generate-whitelist": "npx hardhat run ./scripts/generate-whitelist.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "ethers": "^6.8.1",
+    "hardhat": "^2.19.0",
+    "keccak256": "^1.0.6",
+    "merkletreejs": "^0.3.11"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "chai": "^4.3.10"
+  }
+}
