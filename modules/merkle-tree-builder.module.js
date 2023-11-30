@@ -6,6 +6,7 @@ class MerkleTreeBuilder {
         this.addressList = addressList;
         // Calcul des feuilles à partir de la whiteliste
         this.leaves = this.calculateLeaves(); 
+        this.tree = '';
     }
 
     calculateLeaves() {
@@ -15,9 +16,14 @@ class MerkleTreeBuilder {
 
     buildMerkleTree() {
       // Construction de l'arbre de Merkle
-        return new MerkleTree(this.leaves, keccak256, {
+        this.tree = new MerkleTree(this.leaves, keccak256, {
             sortPairs: true, 
         });
+        return this.tree;
+    }
+
+    getRoot() {
+        return this.tree.getRoot().toString('hex');
     }
 }
 
